@@ -1,0 +1,102 @@
+[
+  {
+    "_class": "com.pillapp.api.domain.entities.User",
+    "id": 1,
+    "email": "cev@cev.com",
+    "userName": "Señor Cev",
+    "password": "$2a$10$sIbDMGffLErlMxHTOLC0VuaxMql/ajPHx7S9YipkBamnfQve0nY3S",
+    "rawPassword": "Cev.1234"
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.User",
+    "id": 2,
+    "email": "cev2@cev.com",
+    "userName": "Señora Cev",
+    "password": "$2a$10$sIbDMGffLErlMxHTOLC0VuaxMql/ajPHx7S9YipkBamnfQve0nY3S",
+    "rawPassword": "Cev.1234"
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.Patient",
+    "id": 1,
+    "fullName": "Carlitos",
+    "notes": "Primera linea\nSegunda linea",
+    "kg": 30,
+    "users": [
+      {"id": 1}
+    ]
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.Patient",
+    "id": 2,
+    "fullName": "Anita",
+    "notes": "Alergia a penicilina\nSangre A+\nDr Meléndez",
+    "users": [
+      {"id": 1},
+      {"id": 2}
+    ]
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.MeetingPlan",
+    "patient": {
+      "id": 1
+    },
+    "appointmentTimestamp": 1671786000,
+    "description": "Podólogo clínica Descartes",
+    "reminderTimestamp": 0
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.MeetingPlan",
+    "patient": {
+      "id": 1
+    },
+    "appointmentTimestamp": 1671915600,
+    "description": "Vacuna Wildfire",
+    "reminderTimestamp": 1671742800
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.DrugPlan",
+    "patient": {
+      "id": 1
+    },
+    "description": "Eutirox 25 microgramos",
+    "dosePerIntake": "3 comprimidos/día (75 microgramos)",
+    "startTimestamp": 0,
+    "duration": 2419200,
+    "period": 86400,
+    "reminderTimestamp": 1671742800
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.DrugPlan",
+    "patient": {
+      "id": 1
+    },
+    "description": "Dercutane 20 microgramos",
+    "dosePerIntake": "1 cápsula/día (20 microgramos)",
+    "startTimestamp": 0,
+    "duration": 2419200,
+    "period": 86400,
+    "reminderTimestamp": 1671742800
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.PlannedDrugAction",
+    "patient": {
+      "id": 1
+    },
+    "plan": {
+      "id": 4
+    },
+    "doneTimestamp":  1669121876,
+    "dose": "1"
+  },
+  {
+    "_class": "com.pillapp.api.domain.entities.PlannedDrugAction",
+    "patient": {
+      "id": 1
+    },
+    "plan": {
+      "id": 4
+    },
+    "doneTimestamp":  1669035476,
+    "dose": "1"
+  }
+]

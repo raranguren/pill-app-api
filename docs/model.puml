@@ -1,0 +1,79 @@
+@startuml
+
+class User #white-aquamarine {
+  creationDate
+  email
+  userName
+  password
+}
+class FeedItem {
+  updatedTimestamp
+}
+class Patient extends FeedItem {
+  fullName
+  kg
+  notes
+}
+class Reminder #white-thistle extends FeedItem {
+  reminderTimestamp
+}
+class CareAction #white-palegoldenrod extends FeedItem {
+  doneTimestamp
+}
+class CarePlan #thistle  extends Reminder {
+  startTimestamp
+  duration
+  period
+}
+class DrugPlan #thistle extends CarePlan {
+  description
+  dosePerIntake
+}
+class MeetingPlan #thistle extends ReminderPlan {
+  appointmentTimestamp
+}
+class ReminderPlan #thistle extends Reminder {
+  description
+}
+class VitalPlan #thistle extends CarePlan {
+}
+class DrugAction #palegoldenrod extends CareAction {
+  doseNotes
+}
+class PlannedDrugAction #palegoldenrod extends DrugAction {
+}
+class UnplannedDrugAction #palegoldenrod extends DrugAction {
+  dose
+  kg
+}
+class VitalAction #palegoldenrod extends CareAction {
+  value1
+  value2
+}
+class Vital {
+  description
+  label1
+  label2
+  units
+}
+class Drug {
+  description
+  activeSubstance
+  substancePercentage
+}
+class ActiveSubstance {
+  periodInHours
+  dosePerPeriodPerKg
+}
+
+User "*" <--> "*" Patient
+Patient "1" o--> "*" Reminder
+Patient "1" o-> "*" CareAction
+UnplannedDrugAction *--> "1" Drug
+PlannedDrugAction *-> "1" DrugPlan
+VitalPlan *--> "1" Vital
+VitalAction *-> "1" Vital
+Drug *--> "1" ActiveSubstance
+
+
+@enduml
